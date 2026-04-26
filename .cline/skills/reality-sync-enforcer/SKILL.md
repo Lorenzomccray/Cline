@@ -1,3 +1,8 @@
+---
+name: reality-sync-enforcer
+description: Keeps Cline aligned to verified repo truth instead of assumptions by prioritizing files, diffs, command output, and receipts.
+---
+
 # Reality Sync Enforcer
 
 ## Purpose

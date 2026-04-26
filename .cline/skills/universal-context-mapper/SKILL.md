@@ -1,3 +1,8 @@
+---
+name: universal-context-mapper
+description: Maps the current task to the correct project surface, source of truth, and next file to inspect across local repo, runtime state, and Drive.
+---
+
 # Universal Context Mapper
 
 ## Purpose

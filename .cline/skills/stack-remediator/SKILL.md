@@ -1,3 +1,8 @@
+---
+name: stack-remediator
+description: Repairs local control-plane drift with the smallest safe change and verifies remediation with command output or receipts.
+---
+
 # Stack Remediator
 
 ## Purpose
