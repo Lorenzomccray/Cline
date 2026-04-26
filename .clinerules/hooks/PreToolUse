@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="/home/lorenzomccray/Cline"
+LOG_DIR="$ROOT/.cortex/.hooks/pretooluse"
+mkdir -p "$LOG_DIR"
+
+TS="$(date +%Y%m%d-%H%M%S)"
+INPUT="$(cat || true)"
+LOG_FILE="$LOG_DIR/$TS.json"
+printf '%s\n' "$INPUT" > "$LOG_FILE"
+
+danger='(git reset --hard|git clean -fd|git push|rm -rf|sudo |dnf install|apt install|systemctl restart|chmod -R|chown -R)'
+
+if printf '%s' "$INPUT" | grep -Eiq "$danger"; then
+  printf '%s\n' '{"cancel":true,"contextModification":"High-risk tool use detected. Approval required by project policy.","errorMessage":"Blocked by PreToolUse: approval required for high-risk command."}'
+  exit 0
+fi
+
+printf '%s\n' '{"cancel":false,"contextModification":"","errorMessage":""}'
