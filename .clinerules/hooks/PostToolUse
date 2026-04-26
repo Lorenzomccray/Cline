@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="/home/lorenzomccray/Cline"
+LOG_DIR="$ROOT/.cortex/.hooks/posttooluse"
+mkdir -p "$LOG_DIR"
+
+TS="$(date +%Y%m%d-%H%M%S)"
+INPUT="$(cat || true)"
+LOG_FILE="$LOG_DIR/$TS.json"
+printf '%s\n' "$INPUT" > "$LOG_FILE"
+
+printf '%s\n' '{"cancel":false,"contextModification":"Post-tool receipt written under .cortex/.hooks/posttooluse.","errorMessage":""}'

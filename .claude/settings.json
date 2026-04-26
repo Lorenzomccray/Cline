@@ -23,6 +23,12 @@
         "type": "command",
         "command": "bash /home/lorenzomccray/Cline/.clinerules/hooks/PreToolUse"
       }
+    ],
+    "PostToolUse": [
+      {
+        "type": "command",
+        "command": "bash /home/lorenzomccray/Cline/.clinerules/hooks/PostToolUse"
+      }
     ]
   }
 }
