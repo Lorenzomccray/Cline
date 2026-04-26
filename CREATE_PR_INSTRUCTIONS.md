@@ -1,53 +1,65 @@
+<!-- @format -->
+
 # Instructions to Create GitHub Pull Request
 
 Follow these steps in your terminal where `gh` command is available:
 
 ## Step 1: Navigate to Project Directory
+
 ```bash
-cd /home/lorernzomccray/Cline
+cd /home/lorenzomccray/Cline
 ```
 
 ## Step 2: Check GitHub CLI Authentication
+
 ```bash
 gh auth status
 ```
 
 If not authenticated, run:
+
 ```bash
 gh auth login
 ```
 
 ## Step 3: Create GitHub Repository
+
 ```bash
 # Create a new repository on GitHub
 gh repo create --public --description "Cline personal project root" --source=. --remote=origin --push
 ```
 
 **OR** if you prefer to create it manually:
-1. Go to https://github.com/new
+
+1. Go to <https://github.com/new>
 2. Create repository named "cline" (or your preferred name)
 3. Don't initialize with README
 4. Then run:
+
    ```bash
    git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
    git push -u origin master
    ```
 
 ## Step 4: Create Pull Request
+
 ```bash
 # Create PR using the prepared body
 gh pr create --title "Initial Cline project structure" --body-file /tmp/pr-body.md --base master
 ```
 
 ## Step 5: Verify PR Created
+
 ```bash
 gh pr view --web
 ```
 
 ## Alternative: Manual PR Creation
+
 If `gh` commands don't work:
 
 1. Push your code:
+
    ```bash
    git push -u origin master
    ```
@@ -70,7 +82,9 @@ This PR adds initial project structure for the Cline personal project root, incl
 - CLAUDE.md for project memory and context
 - .gitignore file
 - PR template for future pull requests
-- Basic directory structure (browser-wrapper/, docs/, Hooks/, Rules/, Workflows/)
+- Repo-owned control-plane surfaces (.clinerules/, .clinerules/hooks/, .clinerules/workflows/)
+- Operations docs (docs/operations/, docs/prompts/)
+- Runtime state directory (.cortex/)
 
 ## Type of Change
 - [x] New feature (non-breaking change that adds functionality)
@@ -92,6 +106,7 @@ Initial setup of the Cline personal project root directory structure.
 ```
 
 ## Current Project Status
+
 - ✅ Git repository initialized with 2 commits
 - ✅ All files committed
 - ✅ PR template created at `.github/pull_request_template.md`

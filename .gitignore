@@ -1,3 +1,6 @@
+# .cortex/ contains local runtime receipts, hook output logs, and transient state.
+# It is a repo-owned surface (listed in .clinerules/00-root-policy.md) but is
+# intentionally untracked because its contents are machine-local artifacts.
 .cortex/
 
 *.bak

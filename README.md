@@ -1,34 +1,29 @@
+<!-- @format -->
+
 # Cline Root
 
 This directory is the canonical personal project root for the local Cline stack.
 
 ## Top-level structure
 
-- `browser-wrapper/`
-  Chrome unpacked extension shell for the local browser control panel.
-
-- `MCP/`
-  MCP-related servers, adapters, and protocol work.
-
-- `Hooks/`
-  Hook definitions and hook-related helper files.
-
-- `Rules/`
-  Project rules, guardrails, and behavioral controls.
-
-- `Workflows/`
-  Reusable task flows, execution patterns, and process docs.
-
 - `.cortex/`
-  Internal project control/state area.
+  Runtime receipts, hook output logs, and local state artifacts (gitignored).
 
-- `.cortex/.hooks/`
-  Hook output/log drop location.
+- `.clinerules/`
+  Active policy, hooks, and workflow definitions (repo-owned control plane).
 
 - `docs/`
   Human-readable project maps and internal documentation.
 
+## Legacy top-level folders
+
+The following directories exist but are **not active surfaces** — see `.clinerules/00-root-policy.md`:
+
+- `Hooks/`
+- `Rules/`
+- `Workflows/`
+
 ## Notes
 
 - `~/.cline` remains the actual runtime/config/state location and is intentionally not merged into this directory.
-- The Chrome unpacked extension path should point to `browser-wrapper/`, not the root of this project.
+- Active repo-owned surfaces are defined in `.clinerules/00-root-policy.md`.
