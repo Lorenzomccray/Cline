@@ -1,3 +1,5 @@
 .cortex/
 
 *.bak
+
+_drive_export/
