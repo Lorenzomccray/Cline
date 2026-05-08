@@ -3,6 +3,28 @@
 # intentionally untracked because its contents are machine-local artifacts.
 .cortex/
 
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
+# Backups
 *.bak
 
+# Drive/export mirrors
 _drive_export/
+
+# Local/generated artifacts
+*.vsix
+.pytest_cache/
+generated-docs/
+openmemory.md
+
+# Imported external references are quarantined or documented before tracking
+MCP/github.com/
+
+# OpenMemory - IDE/Assistant specific generated rules
+.cursor/rules/openmemory.mdc
+
+# Invalid/unverified MCP configs stay out until the server is installed and approved
+.cursor/mcp.json
+.vscode/mcp.json
